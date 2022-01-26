@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <!-- HEAD -->
+    <head>
+        <title>Color Generator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- CSS links -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Font Awesome icons (free version)-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <!-- BODY -->
+    <body>
+        <!-- container -->
+        <div class="container">
+            <div class="row" id="bg-cover">
+                <div class="col-lg-12 mb-3" id="switch">
+                    <!-- Switch for Theme -->
+    	           
+                 <input onclick="toggle()" id="checkbox" name="checkbox" type="checkbox" /><label for="checkbox" id="checklabel">Toggle</label>
+                 <span class="px-1 fw-bold" id="darkLight">Dark</span>
+                    <!-- End of switch -->
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-lg-12 mb-4">
+                    <div id="container">
+                        <div class="text" id="all" style="--j:0;">
+                          <span style="--i: 0">C</span>
+                          <span style="--i: 1">O</span>
+                          <span style="--i: 2">L</span>
+                          <span style="--i: 3">C</span>
+                        </div>
+                        <div class="text" id="all" style="--j:1;">
+                          <span style="--i: 0">O</span>
+                          <span style="--i: 1">L</span>
+                          <span style="--i: 2">O</span>
+                          <span style="--i: 3">O</span>
+                        </div>
+                        <div class="text" id="all" style="--j:2;">
+                          <span style="--i: 0">L</span>
+                          <span style="--i: 1">O</span>
+                          <span style="--i: 2">R</span>
+                          <span style="--i: 3">L</span>
+                        </div>
+                        <div class="text" id="all" style="--j:3;">
+                          <span style="--i: 0">O</span>
+                          <span style="--i: 1">R</span>
+                          <span style="--i: 2">G</span>
+                          <span style="--i: 3">O</span>
+                        </div>
+                        <div class="text" id="all" style="--j:4;">
+                          <span style="--i: 0">R</span>
+                          <span style="--i: 1">G</span>
+                          <span style="--i: 2">E</span>
+                          <span style="--i: 3">R</span>
+                        </div>
+                        <div class="text" id="gen" style="--j:5;">
+                          <span style="--i: 0">G</span>
+                          <span style="--i: 1">E</span>
+                          <span style="--i: 2">N</span>
+                          <span style="--i: 3">G</span>
+                        </div>
+                        <div class="text" id="gen" style="--j:6;">
+                          <span style="--i: 0">E</span>
+                          <span style="--i: 1">N</span>
+                          <span style="--i: 2">C</span>
+                          <span style="--i: 3">E</span>
+                        </div>
+                        <div class="text" id="gen" style="--j:7;">
+                          <span style="--i: 0">N</span>
+                          <span style="--i: 1">C</span>
+                          <span style="--i: 2">O</span>
+                          <span style="--i: 3">N</span>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-lg-12 text-center py-4 px-3" id="box">
+                    <!-- Text -->
+                    <h4 class="text-center colorHex fw-bold">Color Generator</h4>
+                </div>
+            </div>     
+            <div class="row" >
+                    <!-- Result Container -->
+
+                <div class="col-lg-7 offset-lg-1 col-md-12 col-sm-12 col-xs-12 mb-5">
+                    <textarea readonly id="PasswordResult" class="form-control" placeholder="Generated Color will be displayed here"></textarea>
+                </div>
+                <!-- Generate and copy button -->
+                <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn btn-lg" onclick="getNewColor()" id="generateBtn">
+                        <i class="fas fa-key"></i> Generate
+                    </button>
+                    <button class="btn btn-lg mx-lg-3 mx-3" id="clipboardBtn">
+                        <i class="far fa-clipboard"></i> Copy
+                    </button>
+                </div>
+            </div>   
+            
+                    <!--Color Palette Texture-->
+                    
+                    <div class="row my-5 text-center justify-content-center">
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                            
+                        <div class="card">
+                            <div class="dark1 py-2" id="dark1" > </div>
+                            <div class="card-body" style="height: 40px;">
+                                <p class=" text-center" id="darktext1">#209732</p>
+                            </div>
+                        </div>
+                        </div>  
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                            
+                        <div class="card">
+                            <div class="normal py-2" id="normal" > </div>
+                            <div class="card-body" style="height: 40px;">
+                                <p class=" text-center" id="normaltext">#29c240</p>
+                            </div>
+                        </div>
+                        </div>  
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                            
+                            <div class="card">
+                                <div class="lighter1 py-2" id="lighter1" > </div>
+                                <div class="card-body" style="height: 40px;">
+                                    <p class=" text-center" id="lighttext1">#46d85c</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-sm-5 mb-5">
+                            
+                            <div class="card">
+                                <div class="lighter2 py-2" id="lighter2" > </div>
+                                <div class="card-body" style="height: 40px;">
+                                    <p class=" text-center" id="lighttext2">#70e181</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                            
+                            <div class="card">
+                                <div class="dark2 py-2" id="dark2" > </div>
+                                <div class="card-body" style="height: 40px;">
+                                    <p class=" text-center" id="darktext2">#12541c</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                            <div class="card">
+                                <div class="dark3 py-2" id="dark3" > </div>
+                                <div class="card-body" style="height: 40px;">
+                                    <p class=" text-center" id="darktext3">#092a0e</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <!--Different Color Palette Display-->
+                    
+            <div class="row my-2 text-center justify-content-center" id="palette">
+                <h4 class="text-center mb-4 colorHex fw-bold">Random Colors</h4>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box1" >  </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class=" text-center" id="text1"></p>
+                    </div>
+                </div>
+                </div>  
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box2" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text2"></p>
+                    </div>
+                </div>
+                </div>  
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box3" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text3"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box4" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text4"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box5" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text5"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box6" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text6"></p>
+                    </div>
+                </div>
+                </div> 
+            </div>
+
+            <div class="row my-2 text-center justify-content-center" id="palette">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box7" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text7"></p>
+                    </div>
+                </div>
+                </div>  
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box8" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text8"></p>
+                    </div>
+                </div>
+                </div>  
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-md-5 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box9" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text9"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-sm-5 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box10" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text10"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box11" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text11"></p>
+                    </div>
+                </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-6 mb-5">
+                    <div class="card">
+                    <div class="small py-2" id="box12" > </div>
+                    <div class="card-body" style="height: 40px;">
+                        <p class="text-center" id="text12"></p>
+                    </div>
+                </div>
+                </div> 
+            </div>
+            <!-- Footer -->
+            <footer class="footer text-center my-5">
+            <div class="row" id="footer-area">
+                <div class="col-lg-12">
+                    <p class="small mb-0 py-4" id="footer-text">Copyright &copy; <script>document.write(new Date().getFullYear());</script>
+                       All Rights Reserved | Color-Generator | Developed By Omemgboji Emmanuel</p>
+                </div>
+            </div>
+            </footer>
+        </div>
+        <script src="js/colorgen.js"></script>
+    </body>
+</html>
